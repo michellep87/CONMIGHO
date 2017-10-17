@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-HN">
+  <Title Text="Tablero de control" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>Origen de datos SQL 1</Name>
+      <Connection Name="localhost_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="DESKTOP-P4PU9JU" />
+          <Parameter Name="database" Value="CONMIGHO" />
+          <Parameter Name="useIntegratedSecurity" Value="True" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="vuRetornados">
+        <Tables>
+          <Table Name="vuRetornados" X="30" Y="30" Width="125" Height="989" />
+        </Tables>
+        <Columns>
+          <Column Table="vuRetornados" Name="ID" />
+          <Column Table="vuRetornados" Name="Año" />
+          <Column Table="vuRetornados" Name="Mes" />
+          <Column Table="vuRetornados" Name="Meses" />
+          <Column Table="vuRetornados" Name="Semana" />
+          <Column Table="vuRetornados" Name="Dia" />
+          <Column Table="vuRetornados" Name="Fecha de Llegada" />
+          <Column Table="vuRetornados" Name="CodLugarLlegada" />
+          <Column Table="vuRetornados" Name="Lugar de Llegada" />
+          <Column Table="vuRetornados" Name="CodPaisProcedencia" />
+          <Column Table="vuRetornados" Name="Pais" />
+          <Column Table="vuRetornados" Name="CodEstado" />
+          <Column Table="vuRetornados" Name="Estado del Pais" />
+          <Column Table="vuRetornados" Name="CodOficinaConsular" />
+          <Column Table="vuRetornados" Name="Oficina Consular" />
+          <Column Table="vuRetornados" Name="CodViaRetorno" />
+          <Column Table="vuRetornados" Name="Via de Retorno" />
+          <Column Table="vuRetornados" Name="CodTipoDeportacion" />
+          <Column Table="vuRetornados" Name="Tipo de Deportacion" />
+          <Column Table="vuRetornados" Name="Numero de Identidad" />
+          <Column Table="vuRetornados" Name="Nombre" />
+          <Column Table="vuRetornados" Name="CodDepartamento" />
+          <Column Table="vuRetornados" Name="Departamento" />
+          <Column Table="vuRetornados" Name="CodMunicipio" />
+          <Column Table="vuRetornados" Name="Municipio" />
+          <Column Table="vuRetornados" Name="Fecha de Nacimiento" />
+          <Column Table="vuRetornados" Name="Edad" />
+          <Column Table="vuRetornados" Name="Adulto" />
+          <Column Table="vuRetornados" Name="Adulto/NNA" />
+          <Column Table="vuRetornados" Name="CodGenero" />
+          <Column Table="vuRetornados" Name="Sexo" />
+          <Column Table="vuRetornados" Name="Viaja Solo" />
+          <Column Table="vuRetornados" Name="Unidad Familiar" />
+          <Column Table="vuRetornados" Name="No de Personas que Acompañan" />
+          <Column Table="vuRetornados" Name="CodParentesco" />
+          <Column Table="vuRetornados" Name="Parentesco" />
+          <Column Table="vuRetornados" Name="Nombre de Acompañante" />
+          <Column Table="vuRetornados" Name="Numero de Idrentidad de Acompañante" />
+          <Column Table="vuRetornados" Name="CodDepartamentoAdulto" />
+          <Column Table="vuRetornados" Name="Departamento Acompañante" />
+          <Column Table="vuRetornados" Name="CodMunicipioAdulto" />
+          <Column Table="vuRetornados" Name="Municipio Acompañante" />
+          <Column Table="vuRetornados" Name="Fecha de Nacimiento de Acompañante" />
+          <Column Table="vuRetornados" Name="Edad Acompañante" />
+          <Column Table="vuRetornados" Name="CodGeneroAdulto" />
+          <Column Table="vuRetornados" Name="Sexo Acompañante" />
+          <Column Table="vuRetornados" Name="Delito" />
+          <Column Table="vuRetornados" Name="Condicion Medica" />
+          <Column Table="vuRetornados" Name="Habilitado" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Origen de datos SQL 1">
+          <View Name="vuRetornados">
+            <Field Name="ID" Type="Int32" />
+            <Field Name="Año" Type="Int32" />
+            <Field Name="Mes" Type="Int32" />
+            <Field Name="Meses" Type="String" />
+            <Field Name="Semana" Type="Int32" />
+            <Field Name="Dia" Type="String" />
+            <Field Name="Fecha de Llegada" Type="DateTime" />
+            <Field Name="CodLugarLlegada" Type="Int32" />
+            <Field Name="Lugar de Llegada" Type="String" />
+            <Field Name="CodPaisProcedencia" Type="Int32" />
+            <Field Name="Pais" Type="String" />
+            <Field Name="CodEstado" Type="Int32" />
+            <Field Name="Estado del Pais" Type="String" />
+            <Field Name="CodOficinaConsular" Type="Int32" />
+            <Field Name="Oficina Consular" Type="String" />
+            <Field Name="CodViaRetorno" Type="Int32" />
+            <Field Name="Via de Retorno" Type="String" />
+            <Field Name="CodTipoDeportacion" Type="Int32" />
+            <Field Name="Tipo de Deportacion" Type="String" />
+            <Field Name="Numero de Identidad" Type="String" />
+            <Field Name="Nombre" Type="String" />
+            <Field Name="CodDepartamento" Type="Int32" />
+            <Field Name="Departamento" Type="String" />
+            <Field Name="CodMunicipio" Type="Int32" />
+            <Field Name="Municipio" Type="String" />
+            <Field Name="Fecha de Nacimiento" Type="DateTime" />
+            <Field Name="Edad" Type="Int32" />
+            <Field Name="Adulto" Type="Boolean" />
+            <Field Name="Adulto/NNA" Type="String" />
+            <Field Name="CodGenero" Type="Int32" />
+            <Field Name="Sexo" Type="String" />
+            <Field Name="Viaja Solo" Type="String" />
+            <Field Name="Unidad Familiar" Type="Int32" />
+            <Field Name="No de Personas que Acompañan" Type="Int32" />
+            <Field Name="CodParentesco" Type="Int32" />
+            <Field Name="Parentesco" Type="String" />
+            <Field Name="Nombre de Acompañante" Type="String" />
+            <Field Name="Numero de Idrentidad de Acompañante" Type="String" />
+            <Field Name="CodDepartamentoAdulto" Type="Int32" />
+            <Field Name="Departamento Acompañante" Type="String" />
+            <Field Name="CodMunicipioAdulto" Type="Int32" />
+            <Field Name="Municipio Acompañante" Type="String" />
+            <Field Name="Fecha de Nacimiento de Acompañante" Type="DateTime" />
+            <Field Name="Edad Acompañante" Type="Int32" />
+            <Field Name="CodGeneroAdulto" Type="Int32" />
+            <Field Name="Sexo Acompañante" Type="String" />
+            <Field Name="Delito" Type="String" />
+            <Field Name="Condicion Medica" Type="String" />
+            <Field Name="Habilitado" Type="Boolean" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pivot ComponentName="pivotDashboardItem1" Name="Cubo 1" DataSource="dashboardSqlDataSource1" DataMember="vuRetornados">
+      <DataItems>
+        <Dimension DataMember="Adulto/NNA" DefaultId="DataItem0" />
+        <Measure DataMember="Numero de Identidad" SummaryType="CountDistinct" DefaultId="DataItem1" />
+        <Dimension DataMember="Año" ShowTotals="false" DefaultId="DataItem2">
+          <NumericFormat FormatType="General" />
+        </Dimension>
+        <Dimension DataMember="Sexo" DefaultId="DataItem3" />
+      </DataItems>
+      <Columns>
+        <Column DefaultId="DataItem2" />
+      </Columns>
+      <Rows>
+        <Row DefaultId="DataItem0" />
+        <Row DefaultId="DataItem3" />
+      </Rows>
+      <Values>
+        <Value DefaultId="DataItem1" />
+      </Values>
+    </Pivot>
+    <Chart ComponentName="chartDashboardItem1" Name="Personas Atendidas Por Genero" DataSource="dashboardSqlDataSource1" DataMember="vuRetornados">
+      <DataItems>
+        <Measure DataMember="Numero de Identidad" Name="Numero de Personas Atendidas" SummaryType="CountDistinct" DefaultId="DataItem1" />
+        <Dimension DataMember="Año" DefaultId="DataItem2">
+          <NumericFormat FormatType="General" />
+        </Dimension>
+        <Dimension DataMember="Sexo" DefaultId="DataItem0" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Panel 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem1" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend OutsidePosition="TopCenterHorizontal" />
+    </Chart>
+    <Pie ComponentName="pieDashboardItem1" Name="Personas Atendidas en Centros Por Grupo Etario" DataSource="dashboardSqlDataSource1" DataMember="vuRetornados">
+      <DataItems>
+        <Measure DataMember="Numero de Identidad" SummaryType="CountDistinct" DefaultId="DataItem1" />
+        <Dimension DataMember="Adulto/NNA" DefaultId="DataItem0" />
+        <Dimension DataMember="Año" DefaultId="DataItem2">
+          <NumericFormat FormatType="General" />
+        </Dimension>
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem2" />
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem1" />
+      </Values>
+    </Pie>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutItem DashboardItem="pivotDashboardItem1" Weight="41.7298937784522" />
+      <LayoutGroup Weight="58.2701062215478">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="50" />
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="50" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

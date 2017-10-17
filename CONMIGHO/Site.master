@@ -1,0 +1,180 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Site.master.vb" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> -Aplicacion Estadistica</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/css/Site.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            font-size: 1.1em;
+            display: block;
+            text-align: right;
+            padding: 10px;
+            color: #666666;
+            height: 52px;
+        }
+        .auto-style2 {
+            text-align: center;
+            font-size: small;
+        }
+        .auto-style3 {
+            width: 1378px;
+        }
+        .auto-style4 {
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+            background: #FFFFFF;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+        .auto-style5 {
+            font-size: small;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+       <div class="page" width:"1350px;" style="width: 1400px; height: 690px;">
+           <div class="auto-style4">
+               <div class="title">
+                   <asp:Image ID="iHeaderMain" runat="server" ImageUrl="~/Imagenes/logo.png" Height="69px" Width="137px" /> <br />
+               </div>
+               <div class="auto-style1">
+                   <asp:LoginView ID="HeadLoginView" runat="server" ViewStateMode="Disabled">
+                       <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right" style="font-size: small">
+                                <span class="auto-style5">[ </span> <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Ingresar al Sistema</a> ]
+                            </ul>
+                        </AnonymousTemplate>
+                       <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Bienvenido, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                                <li>
+                                   [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Salir" LogoutPageUrl="~/Account/Login.aspx" OnLoggingOut="Unnamed_LoggingOut" />]
+                                </li>
+                                <asp:HyperLink ID="HyperLink1" runat="server" 
+                            NavigateUrl="~/Default.aspx">Menú Principal</asp:HyperLink>
+                        <br />
+                        <asp:HyperLink ID="hlUserOptions" runat="server" 
+                            NavigateUrl="~/Account/AdminUser.aspx">Opciones del Usuario</asp:HyperLink>
+                            </ul>
+                           
+                        </LoggedInTemplate>
+
+                   </asp:LoginView>
+                   <br />
+                   <br />
+                   <br />
+                   <br />
+                   
+               </div>
+               
+               <div class="nav">
+                   <br />
+                   <br />
+                 <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="left: 0px; top: -2px">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../Carga/CargarExcel.aspx" style="font-size:14px;">Cargar Archivo</a></li>
+              <li><a href="../Carga/RegistrosCarga.aspx" style="font-size:14px;">Registro de Cargas</a></li>
+              <li><a href="../Registro/HistorialRetornados.aspx" style="font-size:14px;">Edicion / Ingreso de Datoss</a></li>
+                <li><a href="#" style="font-size:14px;">Estadisticas</a></li>
+              <li class="dropdown" style="font-size:14px;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:14px;">Mantenimiento<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" style="font-size:14px;">Departamentos</a></li>
+                  <li><a href="#" style="font-size:14px;">Municipios</a></li>
+                  <li><a href="#" style="font-size:14px;">Aldeas</a></li>
+                  <li><a href="#" style="font-size:14px;">Paises</a></li>
+                  <li><a href="#" style="font-size:14px;">Generos</a></li>
+                  <li><a href="#" style="font-size:14px;">Oficinas</a></li>
+                  <li><a href="#" style="font-size:14px;">Consulares</a></li>
+                  <li><a href="#" style="font-size:14px;">Via Retorno</a></li>
+                  <li><a href="#" style="font-size:14px;">Estados</a></li>
+                  <li><a href="#" style="font-size:14px;">Parentescos</a></li>
+                  <li><a href="#" style="font-size:14px;">Tipo de Deportacion</a></li>      
+                  
+                </ul>
+              </li>
+                <li><a href="#" style="font-size:14px;">Usuarios</a></li>
+            </ul>
+           <%-- <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul>--%>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+            </div>
+            
+           </div>
+            <div class="container body-content" style="
+    margin-left: 40px;
+    margin-right: 80px;
+    width: 1330px;
+">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+                <br />
+                <br />
+                <br />
+           
+        </div>
+           
+       </div>
+         <hr class="auto-style3" />
+            <footer>
+                <p class="auto-style2"><strong>&copy; <%: DateTime.Now.Year %> - Derechos Reservados Bi-DSS</strong></p>
+            </footer>
+    </form>
+</body>
+</html>
